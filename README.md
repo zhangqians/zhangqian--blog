@@ -1,7 +1,7 @@
 my blog
 =======
 
-CI status: ![Build Status](https://travis-ci.org/zhangqians/zhanqian--blog.png?branch=master)
+CI status: ![Build Status](https://travis-ci.org/zhangqians/zhangqian--blog.png?branch=master)
 
 my blog using express and react:
 ```
