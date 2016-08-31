@@ -3,8 +3,11 @@ import webpackConfig from '../webpack.config';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import express from 'express';
-
+import apiRoute from './api/api';
+import bodyParser from 'body-parser';
+import db from './db/db';
 const app = express();
+app.use(bodyParser.json());
 const compiler = webpack(webpackConfig);
 
 app.use(webpackDevMiddleware(compiler, {
@@ -26,7 +29,9 @@ app.use(express.static('./public'));
 app.get('/hello', function(req, res) {
   res.send('Hello, world!');
 });
-
+app.use('/api',apiRoute);
 app.listen(3000, function() {
+  db.connect();
   console.log('Listening on 3000');
 });
+export default  app;

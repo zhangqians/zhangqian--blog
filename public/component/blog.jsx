@@ -1,5 +1,7 @@
 import React,{Component} from 'react'
-import request from 'superagent'
+import request from 'superagent';
+import {hashHistory} from 'react-router';
+require('../style/blog.css');
 export default class Article extends Component{
     constructor(props)
     {
@@ -10,17 +12,17 @@ export default class Article extends Component{
         }
     }
     render(){
-        return (<div >
+        return (
+
             <div>
-                <input type="text" placeholder="title" value={this.state.title} onChange={this._onChangeTitle.bind(this)} />
+            <div  className="my-all">
+
+                <input className="col-md-4  title" type="text" placeholder="title" value={this.state.title} onChange={this._onChangeTitle.bind(this)} required/>
+                <textarea className="col-md-4  content" type="text" placeholder="content" value={this.state.content} onChange={this._onChangeContent.bind(this)} required/>
+                <button className="btn btn-info button" type="submit" onClick={this._onSubmit.bind(this)}>提交</button>
             </div>
-            <div>
-                <textarea type="text" placeholder="content" value={this.state.content} onChange={this._onChangeContent.bind(this)}/>
-            </div>
-            <div>
-                <button type="submit" onClick={this._onSubmit.bind(this)}>提交</button>
-            </div>
-        </div>)
+        </div>
+                )
     }
 _onChangeTitle(event) {
     this.setState({
@@ -41,6 +43,7 @@ request.post('./api/article')
     .end((err,res)=>{
         if(err) return console.error(err);
         console.log(res.statusCode);
+        return hashHistory.push('/display');
     })
     }
 }

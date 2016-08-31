@@ -1,0 +1,25 @@
+.head-position{
+     width:60%;
+    height:100px;
+    position:absolute;
+    left:20%;
+    /*border:1px palegreen solid;*/
+}
+.set{
+    display: inline-block;
+    /*border: 1px red solid;*/
+}
+.nav-ul li{
+    display:inline;
+    margin-top:20px;
+}
+.nav-ul li a{
+    font-size: 20px;
+    color:#333435;
+    margin-left:100px;
+    text-decoration:none;
+    /*border: 1px red solid;*/
+}
+.nav-ul li a:hover{
+    font-size: 25px;
+}
