@@ -1,0 +1,17 @@
+.grid-class{
+    width:800px;
+    position: absolute;
+    margin-left:250px;
+    margin-top:100px;
+}
+.my-title{
+    margin-left:40%;
+    margin-top:20px;
+}
+.my-content{
+    width:450px;
+    border:#b4b472 1px solid;
+    padding: 10px 10px 10px 10px;
+    margin-left:15%;
+    margin-top:20px;
+}
